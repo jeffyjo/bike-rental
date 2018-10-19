@@ -1,0 +1,133 @@
+:root {
+    --login-bar--bg:        #E1E1E1;
+    --main--bg:             #F5F5F5;
+    --card--bg:             #EBEBEB;
+
+    --primary-text:         #313848;
+    --secondary-text:       #95D5EA;
+
+    --primary-cta--bg:      #1B2343;
+    --primary-cta--text:    #9396A3;
+    --primary-cta--text-active:#fff;
+
+    --secondary-cta--bg:    #95D5EA;
+    --secondary-cta--text:  #000;
+
+    --primary-link:         #95D5EA;
+    --primary-link--active: #1B2343;
+
+    --login-btn--text:      #fff;;
+}
+
+/* Settings & resets */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ABEM notation 
+    https://css-tricks.com/abem-useful-adaptation-bem/
+
+    notation:
+    [a/m/o]-blockName__ElementName--modifierName
+
+    example: 
+    m-form-group__input--active
+*/
+
+/* Elements */
+h1, h2, h3,
+h4, h5, h6,
+p {
+    color: var(--primary-text);
+}
+
+/* Atoms */
+.a-link {
+    color: var(--secondary-text);
+    position: relative;
+    text-decoration: none;
+    transition: all .2s ease-in-out;
+}
+
+.a-link::after {
+    position: absolute;
+    content: '';
+    width: 0%;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    transition: width .2s ease-in-out;
+}
+
+.a-link:hover {
+    color: var(--primary-link--active);
+    text-decoration: none;
+}
+
+.a-link:hover::after {
+    width: 100%;
+    background: var(--primary-link--active);
+}
+
+.a-button {
+
+}
+
+.a-button--primary {
+    background-color: var(--primary-cta--bg);
+    color: var(--primary-cta--text);
+}
+
+.a-button--primary:hover {
+    color: var(--primary-cta--text-active);
+}
+
+.a-button--secondary {
+    background-color: var(--secondary-cta--bg);
+    color: var(--secondary-cta--text);
+}
+
+/* Molecules */
+.m-form {
+
+}
+
+.m-form__submit {
+    color: var(--login-btn--text);
+}
+
+/* Organisms */
+.o-login-bar {
+    background-color: var(--login-bar--bg);
+    justify-content: flex-end;
+}
+
+.o-login-bar__link {
+    margin: 0 10px;
+}
+
+.o-main-nav {
+    background-color: var(--main--bg);
+}
+
+.p-main {
+    background-color: var(--main--bg);
+}
+
+.o-card {
+    background-color: var(--card--bg);
+    cursor: pointer;
+    transform: scale(1);
+    transition: all 2s ease-in-out;
+}
+
+.o-card:hover > .card-body {
+    transform: scale(1.025);
+}
+
+.o-card:hover > .card-body > .a-button--primary {
+    color: var(--primary-cta--text-active);
+}
+
