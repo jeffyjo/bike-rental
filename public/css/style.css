@@ -116,8 +116,14 @@ p {
     background-color: var(--main--bg);
 }
 
+.btn-bike{
+    float: right;
+}
 .o-card {
     background-color: var(--card--bg);
+    margin: 0rem 1rem 1rem 0rem;
+    /* margin-block-end: 2%; */
+    margin-block-start: 2%;
     cursor: pointer;
     transform: scale(1);
     transition: all 2s ease-in-out;
